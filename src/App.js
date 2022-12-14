@@ -22,7 +22,6 @@ const fetchPopular = async () => {
     setPopular(movies.results);
   };
 
-  
   useEffect(() => {
     setQuery(query);
     fetchPopular();
