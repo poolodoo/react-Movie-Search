@@ -26,15 +26,19 @@ const fetchPopular = async () => {
   useEffect(() => {
     setQuery(query);
     fetchPopular();
-}, [query]);
+}, []);
 
 return (
   <MDBRow>
       <h1>Movies</h1>
       <div className="Container">
       <div class="form-group">        
-            <input type="text" class="form-control" placeholder="Search..."/>
-            <button type="submit" class="btn btn-default btn-primary" onClick={fetchPopular}>Submit</button>  
+      <input type="text" class="form-control" placeholder="Search..."
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyPress={fetchPopular}
+            value={query}/>
+            <button type="submit" class="btn btn-default btn-primary" 
+            onClick={fetchPopular}>Submit</button>  
             </div> 
   </div>            
      <MDBCol sm='6' md='4'>
